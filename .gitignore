@@ -133,3 +133,10 @@ dmypy.json
 
 # VS Code
 .vscode/
+
+# ZIP file
+*.zip
+
+# folders
+*/blogs/
+/blogs/*
