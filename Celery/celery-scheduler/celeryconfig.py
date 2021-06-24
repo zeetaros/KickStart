@@ -1,18 +1,25 @@
 from celery.schedules import crontab
 
 
-CELERY_IMPORTS = ('app.test')
-CELERY_TASK_RESULT_EXPIRES = 30
-CELERY_TIMEZONE = 'UTC'
+imports = ('app.tasks.test', 
+           'app.tasks.test_parallel_tasks'
+           )
+result_expires = 30
+timezone = 'UTC'
 
-CELERY_ACCEPT_CONTENT = ['json', 'msgpack', 'yaml']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
+accept_content = ['json', 'msgpack', 'yaml']
+task_serializer = 'json'
+result_serializer = 'json'
 
-CELERYBEAT_SCHEDULE = {
-    'test-celery': {
-        'task': 'app.test.print_hello',
+beat_schedule = {
+    # 'test-celery': {
+    #     'task': 'app.tasks.test.print_hello',
+    #     # Every minute
+    #     'schedule': crontab(hour="*", minute="*"),
+    # },
+    'execute-add': {
+        'task': 'app.tasks.test_parallel_tasks.group_add',
         # Every minute
-        'schedule': crontab(hour="*", minute="*"),
+        'schedule': crontab(minute="*"),
     }
 }

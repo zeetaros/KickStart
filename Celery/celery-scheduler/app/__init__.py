@@ -1,8 +1,8 @@
 from os import environ
-from flask import Flask
-from celery import Celery
 import celeryconfig
-
+from flask import Flask
+from celery import Celery, group, chain
+from .tasks.test import add, error_handler
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -35,6 +35,7 @@ celery = make_celery(app)
 @app.route('/')
 def view():
     return "Hello, Flask is up and running!"
+
 
 
 if __name__ == "__main__":
