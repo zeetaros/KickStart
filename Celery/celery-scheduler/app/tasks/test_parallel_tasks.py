@@ -4,10 +4,13 @@ import time
 
 
 @shared_task
-def add(x, y, wait=None):
+def add(x, y, wait=None, error=0):
     if wait:
         print(f'Processing task... input: {x}, {y}')
         time.sleep(wait)
+        if error > 0:
+            add.retry()
+            raise ValueError
         print(f'Completed task! input: {x}, {y}')
     return x + y
 
@@ -17,10 +20,12 @@ def group_add():
     print('kicked off task')
     job = group([
             add.s(2, 2, wait=10),   # 4
-            add.s(4, 4, wait=8),    # 8
+            add.s(4, 4, wait=8, error=0),    # 8
             add.s(8, 8, wait=20),   # 16
             add.s(16, 16, wait=5),  # 32
             add.s(32, 32),          # 64
+            add.s(64, 64, wait=10),
+            add.s(128, 128, wait=2),
     ])
     # result = job.apply_async(link_error=error_handler.s())
     result = job.apply_async(retry=True, retry_policy={
