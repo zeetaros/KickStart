@@ -12,11 +12,6 @@ task_serializer = 'json'
 result_serializer = 'json'
 
 beat_schedule = {
-    # 'test-celery': {
-    #     'task': 'app.tasks.test.print_hello',
-    #     # Every minute
-    #     'schedule': crontab(hour="*", minute="*"),
-    # },
     'execute-add': {
         'task': 'app.tasks.test_parallel_tasks.group_add',
         # Every minute

@@ -1,5 +1,6 @@
-from celery import group, shared_task, app
 import time
+from celery import group, shared_task, app
+from ..utils.monitoring import check_unload_error, send_notification
 
 def unload(table):
     if check_unload_error():
@@ -20,10 +21,3 @@ def unload_copy(table):
             raise
 
     copy_s3_to_ec2()
-
-def send_notification():
-    pass
-
-def check_unload_error():
-    "0 record(s) unloaded successfully"
-    return True
