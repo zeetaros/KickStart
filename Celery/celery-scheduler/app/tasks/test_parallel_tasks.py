@@ -20,7 +20,7 @@ def group_add():
     print('kicked off task')
     job = group([
             add.s(2, 2, wait=10),   # 4
-            add.s(4, 4, wait=8, error=0),    # 8
+            add.s(4, 4, wait=8, error=2),    # 8
             add.s(8, 8, wait=20),   # 16
             add.s(16, 16, wait=5),  # 32
             add.s(32, 32),          # 64
