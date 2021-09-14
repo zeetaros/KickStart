@@ -139,4 +139,10 @@ dmypy.json
 
 # folders
 */blogs/
-/blogs/*
+/blogs/*]
+
+# redis
+redis-6.2.4
+
+# dagster temp
+tmpdx*
