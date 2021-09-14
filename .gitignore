@@ -143,3 +143,6 @@ dmypy.json
 
 # redis
 redis-6.2.4
+
+# dagster temp
+tmpdx*
