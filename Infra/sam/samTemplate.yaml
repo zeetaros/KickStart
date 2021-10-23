@@ -36,7 +36,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: cc-test-event-consumer1
-      CodeUri: ./eventbridge_poc/cc-test-event-consumer1/
+      CodeUri: ./lambda/cc-test-event-consumer1/
       Handler: lambda_function.lambda_handler
       Environment:
         Variables:
@@ -74,7 +74,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: cc-test-event-consumer2
-      CodeUri: ./eventbridge_poc/cc-test-event-consumer2/
+      CodeUri: ./lambda/cc-test-event-consumer2/
       Handler: lambda_function.lambda_handler
       Runtime: python3.8
       MemorySize: 128
