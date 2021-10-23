@@ -1,0 +1,172 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: EventBridge Demo
+
+Parameters:
+  Environments:
+    Type: String
+    Default: UAT
+    Description: Parameters deployment environments
+
+  LoggingBucketName:
+    Type: String
+    Default: cloudtrail-logs # S3 logging bucket for storing CloudTrail events
+
+Globals:
+  Function:
+    Timeout: 15
+
+Mappings:
+  StagesMap:
+    UAT:
+      CONFIGBUCKET: uat-input
+      CONFIGKEY: lambda-config-files/config-v1.00.json
+      RoleEnv: arn:aws:iam::700000000000:role/uat-LambdaExecutionRole
+
+
+Resources:
+# S3 bucket
+  EventProducerBucket3: 
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: "test-eventbridge-producer-3"
+
+# Lambda function
+  EventConsumerFunction1:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: cc-test-event-consumer1
+      CodeUri: ./eventbridge_poc/cc-test-event-consumer1/
+      Handler: lambda_function.lambda_handler
+      Environment:
+        Variables:
+          CONFIG_BUCKET: !FindInMap
+            - StagesMap
+            - Ref: Environments
+            - CONFIGBUCKET
+      Runtime: python3.8
+      MemorySize: 128
+      Timeout: 15
+      Role: !FindInMap
+            - StagesMap
+            - Ref: Environments
+            - RoleEnv
+      Events:
+        GetEvent:
+          Type: EventBridgeRule
+          Properties:
+            Pattern:
+              source: 
+                - "aws.s3"
+              detail: 
+                eventName: 
+                  - "PutObject"
+                  - "PutObjectAcl"
+                  - "CopyObject"
+                requestParameters:
+                  bucketName:
+                    - prefix: "test-eventbridge-producer" 
+                  key:
+                    - prefix: "worker/"
+          
+
+  EventConsumerFunction2:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: cc-test-event-consumer2
+      CodeUri: ./eventbridge_poc/cc-test-event-consumer2/
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+      MemorySize: 128
+      Timeout: 15
+      Role: !FindInMap
+            - StagesMap
+            - Ref: Environments
+            - RoleEnv
+
+
+# EventBridge rule - invokes EventConsumerFunction 
+  EventRule1: 
+    Type: AWS::Events::Rule
+    Properties: 
+      Description: "[PoC] EventRule for multiple buckets with similar names"
+      State: "ENABLED"
+      EventPattern: 
+        source: 
+          - "aws.s3"
+        detail-type:
+          - "AWS API Call via CloudTrail"
+        detail: 
+          eventSource:
+            - "s3.amazonaws.com"
+          eventName: 
+            - "PutObject"
+            - "PutObjectAcl"
+            - "CopyObject"
+          requestParameters:
+            bucketName:
+              - "test-eventbridge-producer-1" 
+              - "test-eventbridge-producer-3"
+            key:
+              - prefix: "subject/"
+      Targets:
+        - Arn: 
+            Fn::GetAtt: 
+              - "EventConsumerFunction1"
+              - "Arn"
+          Id: "EventConsumerFunctionTarget1"
+
+  EventRule2: 
+    Type: AWS::Events::Rule
+    Properties: 
+      Description: "[PoC] EventRule for specific prefix inside a bucket"
+      State: "ENABLED"
+      EventPattern: 
+        source: 
+          - "aws.s3"
+        detail: 
+          eventName: 
+            - "PutObject"
+            - "PutObjectAcl"
+            - "CopyObject"
+          requestParameters:
+            bucketName:
+              - prefix: "test-eventbridge-producer" 
+            key:
+              - prefix: "subject/"
+      Targets:
+        # - Arn: 
+        #     Fn::GetAtt: 
+        #       - "EventConsumerFunction1"
+        #       - "Arn"
+        #   Id: "EventConsumerFunctionTarget1"
+        - Arn: 
+            Fn::GetAtt: 
+              - "EventConsumerFunction2"
+              - "Arn"
+          Id: "EventConsumerFunctionTarget2"
+
+
+  PermissionForEventsToInvokeLambda1: 
+    Type: AWS::Lambda::Permission
+    Properties: 
+      FunctionName: 
+        Ref: "EventConsumerFunction1"
+      Action: "lambda:InvokeFunction"
+      Principal: "events.amazonaws.com"
+      SourceArn: 
+        Fn::GetAtt: 
+          - "EventRule1"
+          - "Arn"
+
+  PermissionForEventsToInvokeLambda2: 
+    Type: AWS::Lambda::Permission
+    Properties: 
+      FunctionName: 
+        Ref: "EventConsumerFunction2"
+      Action: "lambda:InvokeFunction"
+      Principal: "events.amazonaws.com"
+      SourceArn: 
+        Fn::GetAtt: 
+          - "EventRule2"
+          - "Arn"
