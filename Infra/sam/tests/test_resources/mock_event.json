@@ -1,0 +1,31 @@
+{
+    "source": [
+        "aws.s3"
+    ],
+    "detail-type": [
+        "AWS API Call via CloudTrail"
+    ],
+    "detail": {
+        "eventSource": [
+            "s3.amazonaws.com"
+        ],
+        "eventName": [
+            "PutObject",
+            "CopyObject",
+            "PutObjectAcl"
+        ],
+        "requestParameters": {
+            "bucketName": [
+                "test-eventbridge-producer"
+            ],
+            "key": [
+                {
+                    "prefix": "worker/"
+                },
+                {
+                    "prefix": "data/"
+                }
+            ]
+        }
+    }
+}
