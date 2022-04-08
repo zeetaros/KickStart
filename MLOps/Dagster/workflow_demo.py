@@ -1,26 +1,28 @@
-from dagster import pipeline, solid, execute_pipeline
+from dagster import pipeline, solid, op, job, execute_pipeline
+from datetime import datetime
 
-@solid
+@op
 def get_name():
     return "dagster"
 
-@solid
+@op
 def get_age():
     return 19
 
 @solid
 def get_date(context):
-    date = context.solid_config["date"]
+    # date = context.solid_config["date"]
+    date = datetime.now()
     return date
 
-@solid
-def bday_wish(context, name, age, date):
+@op
+def bday(context, name, age, date):
     context.log.info(f"Party on {date}.")
     context.log.info(f"Happy {age} birthday, {name}!")
 
-@pipeline
+@job
 def bday_pipeline():
-    bday_wish(get_name(), get_age())
+    bday(name=get_name(), age=get_age(), date=get_date())
 
 if __name__ == "__main__":
     result = execute_pipeline(bday_pipeline)
