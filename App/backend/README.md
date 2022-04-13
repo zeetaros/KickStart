@@ -9,12 +9,16 @@ brew services start postgresql
 ```
   
 **Steps**  
-Start up the application
+Start up the application by calling  
 ```
 uvicorn main:app --reload
 ```
+or explicitly specifying port and host
+```
+uvicorn main:app --reload --port 8000 --host 127.0.0.1
+```
 Go to the App on browser http://127.0.0.1:8000/  
-Or check the docs http://127.0.0.1:8000/docs
+Or check the API docs http://127.0.0.1:8000/docs This page is useful for getting sample API responses during development.
 
 <br>
 
