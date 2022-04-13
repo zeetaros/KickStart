@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+
+# Database credentials
+.env
+
+# Database used for tests
+test_db.db
