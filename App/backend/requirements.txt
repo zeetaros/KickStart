@@ -2,9 +2,14 @@ fastapi==0.75.1
 uvicorn==0.17.6
 pymongo==4.1.0
 pydantic==1.9.0
+pydantic[dotenv]
+pydantic[email] # email validation as EmailStr is imported
 jinja2==3.1.1 # web app templates
 aiofiles==0.8.0 # serve static files
 sqlalchemy==1.4.35 # database object-relational mapper (ORM)
 python-dotenv==0.20.0 # environment variables management
 psycopg2==2.9.3 # may first require to run "brew install postgresql"
 psycopg2-binary==2.9.3
+httpx==0.22.0
+passlib==1.7.4
+passlib[bcrypt] # password hashing
