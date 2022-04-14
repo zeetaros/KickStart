@@ -10,3 +10,7 @@ def create_new_job(job: JobCreate,db: Session,owner_id:int):
      db.commit()
      db.refresh(job_object)
      return job_object
+
+def retrieve_job(id:int, db:Session):
+    item = db.query(Job).filter(Job.id == id).first()
+    return item
