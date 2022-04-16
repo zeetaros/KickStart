@@ -146,3 +146,6 @@ redis-6.2.4
 
 # dagster temp
 tmpdx*
+
+# test database
+test_db.db
