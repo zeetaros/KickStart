@@ -33,3 +33,13 @@ def retrieve_job(id:int, db:Session, validate_uniqueness:bool=False):
 def list_jobs(db:Session):
      jobs = db.query(Job).all().filter(Job.is_active == True)
      return jobs
+
+def update_job_by_id(id:int, job:JobCreate, db:Session, owner_id):
+     existing_job = db.query(Job).filter(Job.id == id)
+     if not existing_job.first():
+          return 0
+     # Update dictionary with new key value of owner id
+     job.__dict__.update(owner_id=owner_id)
+     existing_job.update(job.__dict__)
+     db.commit()
+     return 1
