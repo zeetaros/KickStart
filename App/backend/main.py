@@ -1,4 +1,3 @@
-import logging
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
@@ -6,18 +5,10 @@ from core.config import settings
 from apis.base import api_router
 from db.session import engine
 from db.base import Base
+import log
 
-logger = logging.getLogger(__name__)
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(module)s - %(message)s')
-loglevels = {
-    "CRITICAL": logging.CRITICAL,
-    "WARNING": logging.WARNING,
-    "INFO": logging.INFO,
-    "DEBUG": logging.DEBUG,
-    "": logging.INFO
-}
-logger.setLevel(loglevels["DEBUG"])
-
+logger = log.setup_logger(__name__)
+logger.debug("Initialise logger from main module")
 
 ## Uncomment to get the initial version of the web app
 # app = FastAPI(title=settings.PROJECT_NAME,version=settings.PROJECT_VERSION)

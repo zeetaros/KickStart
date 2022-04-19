@@ -24,3 +24,13 @@ def read_job(id:int, db:Session=Depends(get_db)):
                               detail=f"Job with this id {id} does not exist"
                          )
      return job
+
+@router.get("/get_exact_owner/{owner_id}", response_model=ShowJob)
+def read_job_one(owner_id:int, db:Session=Depends(get_db)):
+     try:
+          job = retrieve_job(id=owner_id, db=db, validate_uniqueness=True)
+     except Exception:
+          raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                              detail=f"Job with this owner id {owner_id} is not unique or does not exist"
+                         )
+     return job
