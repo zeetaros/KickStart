@@ -1,11 +1,11 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from fastapi import Depends, HTTPException, status
+from typing import List
 
 from db.session import get_db
 from db.models.jobs import Job
 from schemas.jobs import JobCreate, ShowJob
-from db.repository.jobs import create_new_job, retrieve_job
+from db.repository.jobs import create_new_job, retrieve_job, list_jobs
 
 router = APIRouter()
 
@@ -34,3 +34,8 @@ def read_job_one(owner_id:int, db:Session=Depends(get_db)):
                               detail=f"Job with this owner id {owner_id} is not unique or does not exist"
                          )
      return job
+
+@router.get("/all", response_model=List[ShowJob])
+def read_jobs(db:Session=Depends(get_db)):
+     jobs = list_jobs(db=db)
+     return jobs

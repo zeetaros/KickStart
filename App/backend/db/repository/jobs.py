@@ -29,3 +29,7 @@ def retrieve_job(id:int, db:Session, validate_uniqueness:bool=False):
           # Get the first result of possibly many, without raising exceptions
           item = db.query(Job).filter(Job.id == id).first()
           return item
+
+def list_jobs(db:Session):
+     jobs = db.query(Job).all().filter(Job.is_active == True)
+     return jobs

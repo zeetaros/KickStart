@@ -47,10 +47,16 @@ class TestReadJob():
           assert response.status_code == 200
           assert response.json()["title"] == "SDE super"
      
-     def test_read_unique_job(self, client_cls):
+     def test_read_unique_job_error(self, client_cls):
           response = client_cls.get("/jobs/get_exact_owner/1/")
           assert response.status_code == 500
      
-     def test_read_empty_job(self, client_cls):
+     def test_read_empty_job_error(self, client_cls):
           response = client_cls.get("/jobs/get_exact_owner/3/")
           assert response.status_code == 500
+
+     def test_read_all_jobs(self, client_cls):
+          response = client_cls.get("/jobs/all/")
+          assert response.status_code == 200
+          assert response.json()[0]
+          assert response.json()[1]
