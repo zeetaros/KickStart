@@ -5,9 +5,9 @@ from core.config import settings
 from apis.base import api_router
 from db.session import engine
 from db.base import Base
-import log
+from log import setup_logger
 
-logger = log.setup_logger(__name__)
+logger = setup_logger(__name__)
 logger.debug("Initialise logger from main module")
 
 ## Uncomment to get the initial version of the web app
