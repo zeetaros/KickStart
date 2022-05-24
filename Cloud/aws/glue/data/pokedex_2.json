@@ -23,16 +23,6 @@
           "weaknesses": [
                "Electric",
                "Rock"
-          ],
-          "next_evolution": [
-               {
-                    "num": "017",
-                    "name": "Pidgeotto"
-               },
-               {
-                    "num": "018",
-                    "name": "Pidgeot"
-               }
           ]
      },
      {
@@ -58,18 +48,6 @@
           "weaknesses": [
                "Electric",
                "Rock"
-          ],
-          "prev_evolution": [
-               {
-                    "num": "016",
-                    "name": "Pidgey"
-               }
-          ],
-          "next_evolution": [
-               {
-                    "num": "018",
-                    "name": "Pidgeot"
-               }
           ]
      },
      {
@@ -92,16 +70,6 @@
           "weaknesses": [
                "Electric",
                "Rock"
-          ],
-          "prev_evolution": [
-               {
-                    "num": "016",
-                    "name": "Pidgey"
-               },
-               {
-                    "num": "017",
-                    "name": "Pidgeotto"
-               }
           ]
      },
      {
@@ -126,12 +94,6 @@
           ],
           "weaknesses": [
                "Fighting"
-          ],
-          "next_evolution": [
-               {
-                    "num": "020",
-                    "name": "Raticate"
-               }
           ]
      },
      {
@@ -152,12 +114,6 @@
           "multipliers": null,
           "weaknesses": [
                "Fighting"
-          ],
-          "prev_evolution": [
-               {
-                    "num": "019",
-                    "name": "Rattata"
-               }
           ]
      },
      {
@@ -184,12 +140,6 @@
           "weaknesses": [
                "Electric",
                "Rock"
-          ],
-          "next_evolution": [
-               {
-                    "num": "022",
-                    "name": "Fearow"
-               }
           ]
      },
      {
@@ -212,12 +162,6 @@
           "weaknesses": [
                "Electric",
                "Rock"
-          ],
-          "prev_evolution": [
-               {
-                    "num": "021",
-                    "name": "Spearow"
-               }
           ]
      },
      {
@@ -243,12 +187,6 @@
           "weaknesses": [
                "Ground",
                "Psychic"
-          ],
-          "next_evolution": [
-               {
-                    "num": "024",
-                    "name": "Arbok"
-               }
           ]
      },
      {
@@ -270,12 +208,6 @@
           "weaknesses": [
                "Ground",
                "Psychic"
-          ],
-          "prev_evolution": [
-               {
-                    "num": "023",
-                    "name": "Ekans"
-               }
           ]
      },
      {
@@ -299,12 +231,6 @@
           ],
           "weaknesses": [
                "Ground"
-          ],
-          "next_evolution": [
-               {
-                    "num": "026",
-                    "name": "Raichu"
-               }
           ]
      },
      {
@@ -325,12 +251,6 @@
           "multipliers": null,
           "weaknesses": [
                "Ground"
-          ],
-          "prev_evolution": [
-               {
-                    "num": "025",
-                    "name": "Pikachu"
-               }
           ]
      },
      {
@@ -356,12 +276,6 @@
                "Water",
                "Grass",
                "Ice"
-          ],
-          "next_evolution": [
-               {
-                    "num": "028",
-                    "name": "Sandslash"
-               }
           ]
      },
      {
@@ -384,25 +298,19 @@
                "Water",
                "Grass",
                "Ice"
-          ],
-          "prev_evolution": [
-               {
-                    "num": "027",
-                    "name": "Sandshrew"
-               }
           ]
      },
      {
           "id": 29,
           "num": "029",
-          "name": "Nidoran ♀ (Female)",
+          "name": "Nidoran \u2640 (Female)",
           "img": "http://www.serebii.net/pokemongo/pokemon/029.png",
           "type": [
                "Poison"
           ],
           "height": "0.41 m",
           "weight": "7.0 kg",
-          "candy": "Nidoran ♀ (Female) Candy",
+          "candy": "Nidoran \u2640 (Female) Candy",
           "candy_count": 25,
           "egg": "5 km",
           "spawn_chance": 1.38,
@@ -415,16 +323,6 @@
           "weaknesses": [
                "Ground",
                "Psychic"
-          ],
-          "next_evolution": [
-               {
-                    "num": "030",
-                    "name": "Nidorina"
-               },
-               {
-                    "num": "031",
-                    "name": "Nidoqueen"
-               }
           ]
      },
      {
@@ -437,7 +335,7 @@
           ],
           "height": "0.79 m",
           "weight": "20.0 kg",
-          "candy": "Nidoran ♀ (Female) Candy",
+          "candy": "Nidoran \u2640 (Female) Candy",
           "candy_count": 100,
           "egg": "Not in Eggs",
           "spawn_chance": 0.088,
@@ -450,18 +348,6 @@
           "weaknesses": [
                "Ground",
                "Psychic"
-          ],
-          "prev_evolution": [
-               {
-                    "num": "029",
-                    "name": "Nidoran(Female)"
-               }
-          ],
-          "next_evolution": [
-               {
-                    "num": "031",
-                    "name": "Nidoqueen"
-               }
           ]
      }
 ]
