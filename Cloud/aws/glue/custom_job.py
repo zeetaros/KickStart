@@ -1,9 +1,7 @@
 import sys
 import logging
-import traceback
-import pandas as pd
 
-from datetime import datetime, timedelta
+import pandas as pd
 from pyspark.sql import SQLContext
 from pyspark.sql.functions import input_file_name
 from pyspark.context import SparkContext
@@ -34,7 +32,7 @@ class ValidationError(Exception):
 """
 ## Paramters received from glue invoke lambda function (if the Glue job is triggered by a lambda function)
 input_paths = None
-output_path = "s3://p314159-glue-files-processed/"
+output_path = "s3://glue-demo-datasource/processed/"
 try:
     args = getResolvedOptions(sys.argv, ["JOB_NANME", "input_paths", "file_name"])
     input_paths = [args["input_paths"]]
@@ -54,7 +52,7 @@ job.init(args["JOB_NAME"], args)
 logger.info("============ JOB INITIATED ============")
 
 if not input_paths:
-    input_paths = ["s3://p314159-glue-files-staging/"]
+    input_paths = ["s3://glue-demo-datasource/staging/"]
 
 logger.debug(f"Un-bookmarked files from [{input_paths}] will be processed")
 
@@ -62,7 +60,7 @@ logger.debug(f"Un-bookmarked files from [{input_paths}] will be processed")
 ## @return: DataSource0
 ## @inputs: s3 paths
 DataSource0 = glueContext.create_dynamic_frame.from_options(
-    format_options={"jsonPath": "", "multiline": True},
+    format_options={"jsonPath": "$[*]", "multiline": True},
     connection_type="s3",
     format="json",
     connection_options={"paths": input_paths},
@@ -90,19 +88,32 @@ else:
             raise ValidationError(
                 msg=f"Found value missing in mandatory [column={col}] in [file={pandas_df[pandas_df[col].isna()]['filename'].unique()}]"
             )
-    pandas_df["checked"] = True
+    
+    new_pandas_df = pandas_df[[
+        "id",
+        "num",
+        "name",
+        "img",
+        "height",
+        "weight",
+        "candy",
+        "candy_count",
+        "egg",
+        "spawn_chance",
+        "spawn_time",
+    ]]
 
     ## Convert back to Spark DataFrame
-    new_spark_df = sqlContext.createDataFrame(pandas_df)
+    new_spark_df = sqlContext.createDataFrame(new_pandas_df)
 
-    defg1 = DynamicFrame.fromDF(new_spark_df, glueContext, "defg")
+    DataTransform1 = DynamicFrame.fromDF(new_spark_df, glueContext, "DataTransform1")
 
     ## Determine whether to split the output into multiple files when saving
-    defg1 = defg1.repartition(1)
+    DataTransform1 = DataTransform1.repartition(1)
 
     logger.debug(f"writing to s3 target bucket: {output_path}")
     DataSink0 = glueContext.write_dynamic_frame.from_options(
-        frame=defg1,
+        frame=DataTransform1,
         connection_type="s3",
         format="csv",
         connection_options={"path": output_path, "partitionKeys": []},

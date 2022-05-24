@@ -15,12 +15,14 @@ logger.setLevel(logging.DEBUG)
 s3_client = boto3.client("s3")
 glue_client = boto3.client("glue")
 
+GLUE_JOB_NAME = os.getenv(key="GLUE_JOB_NAME" , default="custom_job")
+
 
 def lambda_handler(event, context):
     for record in event["Records"]:
         source_bucket = record["s3"]["bucket"]["name"]
         source_key = unquote_plus(record["s3"]["object"]["key"])
-        glueJobName = "job"
+        glueJobName = GLUE_JOB_NAME
 
         file_path = os.path.join(
             "s3://", source_bucket, "/".join(source_key.split("/")[:-1]) + "/"
@@ -42,13 +44,13 @@ def lambda_handler(event, context):
                 )
                 job_done = True
                 logger.info(
-                    f"Glue job {glueJobName} triggered with [job_id={response['JobsRunId']}]"
+                    f"Glue job {glueJobName} triggered with [job_id={response['JobRunId']}]"
                 )
             except glue_client.exceptions.ConcurrentRunsExceededException:
                 logger.error(
                     f"ConcurrentRunsExceededException occurs when calling the StartJobRun operation: Concurrent runs exceeded for {glueJobName}"
                 )
-                attemp += 1
+                attempt += 1
                 time.sleep(10)
                 logger.debug(
                     f"retrying after ConcurrentRunsExceededException. \nattempt made: {attempt}"
