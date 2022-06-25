@@ -2,9 +2,23 @@
 To spin up Celery, follow the below steps while you are under the root directory of your Celery project (i.e. `~/celery-scheduler/`)
 
 
+
 1. Run Redis:
 ```bash
-./redis-3.2.1/src/redis-server
+./redis-stable/src/redis-server
+```
+
+** 1st time set up
+Download from http://download.redis.io/redis-stable.tar.gz
+Run below to unzip and install
+```bash
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make
+```
+Recommend adding below to `.bash_profile`
+```sh
+export PATH=$PATH:$HOME/<path>/<to>/redis-stable/src
 ```
 
 2. Run celerybeat:
