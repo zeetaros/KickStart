@@ -15,4 +15,8 @@ This collates all routers information and serves as a single entry point. The id
 Function:: `create_user`  
 This function will receive user from request and UserCreate scheuma will validate that it has a username, email in proper format, and a password.  
   
-The database session will be using the dependency `get_db()` from `session.py`.
+The database session will be using the dependency `get_db()` from `session.py`.  
+
+# Notes
+Version 1 is using postgres db;  
+Version 2 is using mongodb  
