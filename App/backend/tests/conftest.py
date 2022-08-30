@@ -123,4 +123,3 @@ def client_cls(app_cls: FastAPI, db_session_cls: SessionTesting) -> Generator[Te
      with TestClient(app_cls) as client:
           logger.info("Cold start completed for: client_cls")
           yield client
-          

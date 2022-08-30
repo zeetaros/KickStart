@@ -23,7 +23,7 @@ Or check the API docs http://127.0.0.1:8000/docs This page is useful for getting
 <br>
 
 ## First time set-up of database
-Choice of database is postgres.  
+If Choice of database is **postgres**:  
   
 **Pre-requisite**  
 Instruction to get it set up on MacOS.
