@@ -1,3 +1,4 @@
+bson==0.5.10
 fastapi==0.81.0
 fastapi-pagination==0.9.3
 uvicorn==0.17.6
@@ -6,6 +7,7 @@ pydantic==1.9.0
 pydantic[dotenv]
 pydantic[email] # email validation as EmailStr is imported
 jinja2==3.1.1 # web app templates
+motor==3.0.0
 aiofiles==0.8.0 # serve static files
 aioboto3==10.0.0
 sqlalchemy==1.4.35 # database object-relational mapper (ORM)
@@ -17,3 +19,4 @@ passlib==1.7.4
 passlib[bcrypt] # password hashing
 pytest==7.1.1
 python-jose==3.3.0 # jwt tokens
+logging_config==1.0.4

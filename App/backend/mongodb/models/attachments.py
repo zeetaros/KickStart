@@ -1,10 +1,10 @@
-from pydantic import BaseModel, Field
+from pydantic import Field
 
-from models import ObjectIdStr
+from models import ObjectIdStr, ModBaseModel
 
 
-class Attachment(BaseModel):
-    id: str = Field(default_factory=lambda: str(ObjectIdStr))
+class Attachment(ModBaseModel):
+    id: ObjectIdStr = Field(default_factory=ObjectIdStr, alias="_id")
     filename: str
     s3_filepath: str
     is_delete: bool = False
