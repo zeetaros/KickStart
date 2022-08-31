@@ -1,12 +1,13 @@
 import typing as tp
-from pydantic import BaseModel, Field
-from datetime import date, datetime
+from datetime import datetime
 from bson import ObjectId
 
-from models import Company, Attachment, Recruiter, Metadata, ObjectIdStr
+from pydantic import Field
+
+from models import ModBaseModel, Company, Attachment, Recruiter, Metadata, ObjectIdStr
 
 
-class Job(BaseModel):
+class Job(ModBaseModel):
     id: ObjectIdStr = Field(default_factory=ObjectIdStr, alias="_id")
     title: str
     company: Company

@@ -1,12 +1,11 @@
-from lib2to3.pytree import Base
-import typing
+import typing as tp
 import datetime as dt
-from pydantic import BaseModel, Field
+from pydantic import Field
 
-from models import ObjectIdStr
+from models import ObjectIdStr, ModBaseModel
 
 
-class Metadata(BaseModel):
+class Metadata(ModBaseModel):
     id: ObjectIdStr = Field(default_factory=ObjectIdStr, alias="_id")
     created_timestamp: dt.datetime = Field(default_factory=dt.datetime.utcnow)
     created_user: str

@@ -1,7 +1,6 @@
 import typing as tp
 from pydantic import BaseModel, EmailStr, Field
 
-
 from models import Company, ObjectIdStr
 
 
@@ -10,3 +9,5 @@ class Recruiter(BaseModel):
     company: tp.Optional[Company]
     email: EmailStr
     mobile: int
+    first_name: str
+    last_name: str
