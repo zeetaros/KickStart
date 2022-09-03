@@ -10,3 +10,6 @@ test_db.db
 
 # Jupyter notebooks
 notebooks/
+
+# redis
+*redis-stable/
