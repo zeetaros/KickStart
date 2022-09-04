@@ -1,4 +1,3 @@
-import typing as tp
 from datetime import datetime
 from bson import ObjectId
 
@@ -11,11 +10,11 @@ class Job(ModBaseModel):
     id: ObjectIdStr = Field(default_factory=ObjectIdStr, alias="_id")
     title: str
     company: Company
-    location: tp.Optional[str] = "Remote"
-    description: tp.Optional[str]
-    date_posted: datetime.utcnow().date()
-    is_delete: bool = False
-    attachments: tp.List[Attachment] = []
-    contact: tp.Union[Recruiter, ObjectId]
-    metadata: tp.Optional[Metadata]
-    expiration_date: datetime.utcnow().date()
+    locations: list[str] = ["Remote"]
+    description: str | None
+    date_posted: datetime = Field(default=datetime.utcnow().date())
+    is_deleted: bool = False
+    attachments: list[Attachment] = []
+    contact: Recruiter | ObjectId
+    metadata: Metadata | None
+    expiration_date: datetime

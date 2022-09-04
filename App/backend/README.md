@@ -11,11 +11,11 @@ brew services start postgresql
 **Start up the App**  
 Start up the application by calling  
 ```
-uvicorn main:app --reload
+uvicorn app1:app --reload
 ```
 or explicitly specifying port and host
 ```
-uvicorn main:app --reload --port 8000 --host 127.0.0.1
+uvicorn app1:app --reload --port 8000 --host 127.0.0.1
 ```
 Go to the App on browser http://127.0.0.1:8000/  
 Or check the API docs http://127.0.0.1:8000/docs This page is useful for getting sample API responses during development.
@@ -61,6 +61,24 @@ Example: `db/repository/jobs.py/func::update_job_by_id`
 - A test in `tests/`: to test the corresponding API router and the underlying function are working as expected.  
 Example: `tests/test_routes/test_jobs.py/func::test_update_job`
   
+<br>
+
+## App version 1:
+- uses postgres as db, modules involved:
+  - apis/version1/
+  - core/
+  - db/
+  - schemas/
+  - app1.py
+  
+## App version 2:
+- uses mongodb as db, modules involved:
+  - apis/version2/
+  - mongodb/loaders/
+  - mongodb/models/
+  - cfg/
+  - app2.py
+  - apiv2.py
   
   
 ## Reference
