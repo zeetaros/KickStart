@@ -15,7 +15,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from db.base import Base
 from db.session import SQLALCHEMY_DATABASE_URL, get_db
-from apis.base import api_router
+from apis.version1.base import api_router
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
