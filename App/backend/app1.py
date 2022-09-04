@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 from core.config import settings
-from apis.base import api_router
+from apis.version1.base import api_router
 from db.session import engine
 from db.base import Base
 from log import setup_logger

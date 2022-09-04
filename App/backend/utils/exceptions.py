@@ -11,7 +11,7 @@ class DocumentNotFoundError(Exception):
         self.msg = msg
 
 
-def document_not_found(func):
+def handle_doc_not_found(func):
     @wraps(func)
     async def wrapper(*args, **kwargs):
         try:

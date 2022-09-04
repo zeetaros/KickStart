@@ -1,15 +1,15 @@
 import logging
-import typing as tp
 
 from motor.motor_asyncio import AsyncIOMotorDatabase
 
 from cfg import get_settings
 from mongodb.database import Collections
+from mongodb.loaders import BaseLoader
 
 
-class CompanyLoader:
+class CompanyLoader(BaseLoader):
     def __init__(self, database: AsyncIOMotorDatabase):
         super().__init__(database=database, collection_name=Collections.company.name)
 
-    async def get_company(company_id: int):
+    async def get_companies(company_ids: list[int]):
         pass
