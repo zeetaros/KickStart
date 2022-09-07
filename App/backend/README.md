@@ -23,35 +23,67 @@ Or check the API docs http://127.0.0.1:8000/docs This page is useful for getting
 <br>
 
 ## First time set-up of database
-If Choice of database is **postgres**:  
+### If choice of database is **postgres**:  
   
 **Pre-requisite**  
 Instruction to get it set up on MacOS.
-1) installing postgres with Homebrew
+1. installing postgres with Homebrew
 ```sh
 brew install postgresql
 ```
-2) standing up postgres  
+2. standing up postgres  
 ```sh
 brew services start postgresql
 ```
-3) launching the psql interface (by default, a superuser called **postgres** is made who has full superadmin access to entire PostgresSQL instance)  
+3. launching the psql interface (by default, a superuser called **postgres** is made who has full superadmin access to entire PostgresSQL instance)  
 ```
 sudo -u postgres psql
 ```
-4) creating a new database, user and password
+4. creating a new database, user and password
 ```
 postgres=# create database <database name>;
 postgres=# create user <username> with encrypted password '<password>';
 postgres=# grant all privileges on database <database name> to <username>;
 postgres=# exit
 ```
-4) standing down postgres
+5. standing down postgres
 ```sh
 brew services stop postgresql
 ```
 Now you can connect to the database on localhost and the default port 5432.
   
+<br>
+
+### If choice of database is **mongodb**:
+1. installing mongo with Homebrew
+```sh
+brew tap mongodb/brew
+brew install mongodb-community
+```
+2. create a folder to be the local database
+```sh
+sudo mkdir -p /System/Volumes/Data/data/db
+```
+3. give permission
+```sh
+sudo chown -R `id -un` /System/Volumes/Data/data/db
+```
+4. stand up mongodb in the background
+```sh
+brew services run mongodb-community
+```
+5. check if mongodb is running
+```sh
+brew services list
+```
+6. stand down mongodb
+```sh
+brew services stop mongodb-community
+```
+
+<br>
+
+
 ## Module Structure Overview
 For every API action (e.g. GET, POST, DELETE) it generally encompasses 3 components that are :
 - A router in `apis/`: to be interfaced with the front-end App; it allows the front-end to call this API which consequently invokes an corresponding function in the backend `repository/`.  

@@ -3,7 +3,11 @@ from bson import ObjectId
 
 from pydantic import Field
 
-from models import ModBaseModel, Company, Attachment, Recruiter, Metadata, ObjectIdStr
+from mongodb.models.base_model import ModBaseModel, ObjectIdStr
+from mongodb.models.companies import Company
+from mongodb.models.attachments import Attachment
+from mongodb.models.recruiters import Recruiter
+from mongodb.models.metadata import Metadata
 
 
 class Job(ModBaseModel):

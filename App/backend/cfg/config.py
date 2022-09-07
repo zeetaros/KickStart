@@ -15,6 +15,8 @@ class Settings(BaseSettings):
 
     LOG_LEVEL: str = "INFO"
 
+    PROJECT_NAME: str = "Job Clipboard"
+
 
 @lru_cache
 def get_settings():

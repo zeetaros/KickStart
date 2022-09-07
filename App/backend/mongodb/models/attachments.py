@@ -1,6 +1,6 @@
 from pydantic import Field
 
-from models import ObjectIdStr, ModBaseModel
+from mongodb.models import ObjectIdStr, ModBaseModel
 
 
 class Attachment(ModBaseModel):
