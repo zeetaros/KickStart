@@ -1,3 +1,4 @@
+import logging
 import dataclasses
 import typing as tp
 from enum import Enum
@@ -7,6 +8,11 @@ import asyncio
 import pymongo
 from pymongo import ASCENDING, DESCENDING
 from motor.motor_asyncio import AsyncIOMotorClient
+
+from cfg import get_settings
+
+logger = logging.getLogger(__name__)
+settings = get_settings()
 
 
 @dataclasses.dataclass
@@ -45,3 +51,18 @@ class DatabaseClient:
         self.database = self.client.get_database(
             _settings.MONGO_DB, read_preference=pymongo.ReadPreference.SECONDARY
         )
+
+    def start_up(self):
+        # TODO add any tasks that need to be executed on start up
+        logger.info("Cold start completed")
+
+
+motor_engine = DatabaseClient(settings)
+
+
+async def start_application():
+    await motor_engine.start_up()
+
+
+async def end_application():
+    await motor_engine.client.close()

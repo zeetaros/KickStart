@@ -1,7 +1,7 @@
 import typing as tp
 from pydantic import BaseModel, EmailStr, Field
 
-from models import Company, ObjectIdStr
+from mongodb.models import Company, ObjectIdStr
 
 
 class Recruiter(BaseModel):

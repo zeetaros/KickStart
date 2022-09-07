@@ -2,7 +2,7 @@ import typing as tp
 from datetime import datetime
 from pydantic import Field
 
-from models import ObjectIdStr, ModBaseModel
+from mongodb.models import ObjectIdStr, ModBaseModel
 
 
 class Metadata(ModBaseModel):

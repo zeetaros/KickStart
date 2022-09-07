@@ -8,7 +8,7 @@ from motor.motor_asyncio import (
     AsyncIOMotorCollection,
     AsyncIOMotorCursor,
 )
-from database import Collections
+from mongodb.database import Collections
 
 logger = logging.getLogger(__name__)
 

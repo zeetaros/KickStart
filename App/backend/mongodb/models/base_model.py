@@ -34,7 +34,8 @@ class ObjectIdStr(ObjectId):
 
 class ModBaseModel(BaseModel):
     class Config:
-        allow_population_by_field_nsme = True
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
         use_enum_values = True
         alias_generator = snake_to_camel_case
         json_encoders = {

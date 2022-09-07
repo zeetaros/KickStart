@@ -8,8 +8,8 @@ JOB_ROUTER = "job"
 RECRUITER_ROUTER = "recruiter"
 
 
-def add_routers(app_kwargs):
-    api = FastAPI(**app_kwargs)
+def add_routers(api_kwargs):
+    api = FastAPI(**api_kwargs)
 
     routers = {
         COMPANY_ROUTER: route_companies,
