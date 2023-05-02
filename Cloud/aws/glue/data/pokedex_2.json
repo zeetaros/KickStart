@@ -1,0 +1,353 @@
+[
+     {
+          "id": 16,
+          "num": "016",
+          "name": "Pidgey",
+          "img": "http://www.serebii.net/pokemongo/pokemon/016.png",
+          "type": [
+               "Normal",
+               "Flying"
+          ],
+          "height": "0.30 m",
+          "weight": "1.8 kg",
+          "candy": "Pidgey Candy",
+          "candy_count": 12,
+          "egg": "2 km",
+          "spawn_chance": 15.98,
+          "avg_spawns": 1.598,
+          "spawn_time": "01:34",
+          "multipliers": [
+               1.71,
+               1.92
+          ],
+          "weaknesses": [
+               "Electric",
+               "Rock"
+          ]
+     },
+     {
+          "id": 17,
+          "num": "017",
+          "name": "Pidgeotto",
+          "img": "http://www.serebii.net/pokemongo/pokemon/017.png",
+          "type": [
+               "Normal",
+               "Flying"
+          ],
+          "height": "1.09 m",
+          "weight": "30.0 kg",
+          "candy": "Pidgey Candy",
+          "candy_count": 50,
+          "egg": "Not in Eggs",
+          "spawn_chance": 1.02,
+          "avg_spawns": 102,
+          "spawn_time": "01:30",
+          "multipliers": [
+               1.79
+          ],
+          "weaknesses": [
+               "Electric",
+               "Rock"
+          ]
+     },
+     {
+          "id": 18,
+          "num": "018",
+          "name": "Pidgeot",
+          "img": "http://www.serebii.net/pokemongo/pokemon/018.png",
+          "type": [
+               "Normal",
+               "Flying"
+          ],
+          "height": "1.50 m",
+          "weight": "39.5 kg",
+          "candy": "Pidgey Candy",
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.13,
+          "avg_spawns": 13,
+          "spawn_time": "01:50",
+          "multipliers": null,
+          "weaknesses": [
+               "Electric",
+               "Rock"
+          ]
+     },
+     {
+          "id": 19,
+          "num": "019",
+          "name": "Rattata",
+          "img": "http://www.serebii.net/pokemongo/pokemon/019.png",
+          "type": [
+               "Normal"
+          ],
+          "height": "0.30 m",
+          "weight": "3.5 kg",
+          "candy": "Rattata Candy",
+          "candy_count": 25,
+          "egg": "2 km",
+          "spawn_chance": 13.05,
+          "avg_spawns": 1.305,
+          "spawn_time": "01:55",
+          "multipliers": [
+               2.55,
+               2.73
+          ],
+          "weaknesses": [
+               "Fighting"
+          ]
+     },
+     {
+          "id": 20,
+          "num": "020",
+          "name": "Raticate",
+          "img": "http://www.serebii.net/pokemongo/pokemon/020.png",
+          "type": [
+               "Normal"
+          ],
+          "height": "0.71 m",
+          "weight": "18.5 kg",
+          "candy": "Rattata Candy",
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.41,
+          "avg_spawns": 41,
+          "spawn_time": "01:56",
+          "multipliers": null,
+          "weaknesses": [
+               "Fighting"
+          ]
+     },
+     {
+          "id": 21,
+          "num": "021",
+          "name": "Spearow",
+          "img": "http://www.serebii.net/pokemongo/pokemon/021.png",
+          "type": [
+               "Normal",
+               "Flying"
+          ],
+          "height": "0.30 m",
+          "weight": "2.0 kg",
+          "candy": "Spearow Candy",
+          "candy_count": 50,
+          "egg": "2 km",
+          "spawn_chance": 4.73,
+          "avg_spawns": 473,
+          "spawn_time": "12:25",
+          "multipliers": [
+               2.66,
+               2.68
+          ],
+          "weaknesses": [
+               "Electric",
+               "Rock"
+          ]
+     },
+     {
+          "id": 22,
+          "num": "022",
+          "name": "Fearow",
+          "img": "http://www.serebii.net/pokemongo/pokemon/022.png",
+          "type": [
+               "Normal",
+               "Flying"
+          ],
+          "height": "1.19 m",
+          "weight": "38.0 kg",
+          "candy": "Spearow Candy",
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.15,
+          "avg_spawns": 15,
+          "spawn_time": "01:11",
+          "multipliers": null,
+          "weaknesses": [
+               "Electric",
+               "Rock"
+          ]
+     },
+     {
+          "id": 23,
+          "num": "023",
+          "name": "Ekans",
+          "img": "http://www.serebii.net/pokemongo/pokemon/023.png",
+          "type": [
+               "Poison"
+          ],
+          "height": "2.01 m",
+          "weight": "6.9 kg",
+          "candy": "Ekans Candy",
+          "candy_count": 50,
+          "egg": "5 km",
+          "spawn_chance": 2.27,
+          "avg_spawns": 227,
+          "spawn_time": "12:20",
+          "multipliers": [
+               2.21,
+               2.27
+          ],
+          "weaknesses": [
+               "Ground",
+               "Psychic"
+          ]
+     },
+     {
+          "id": 24,
+          "num": "024",
+          "name": "Arbok",
+          "img": "http://www.serebii.net/pokemongo/pokemon/024.png",
+          "type": [
+               "Poison"
+          ],
+          "height": "3.51 m",
+          "weight": "65.0 kg",
+          "candy": "Ekans Candy",
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.072,
+          "avg_spawns": 7.2,
+          "spawn_time": "01:50",
+          "multipliers": null,
+          "weaknesses": [
+               "Ground",
+               "Psychic"
+          ]
+     },
+     {
+          "id": 25,
+          "num": "025",
+          "name": "Pikachu",
+          "img": "http://www.serebii.net/pokemongo/pokemon/025.png",
+          "type": [
+               "Electric"
+          ],
+          "height": "0.41 m",
+          "weight": "6.0 kg",
+          "candy": "Pikachu Candy",
+          "candy_count": 50,
+          "egg": "2 km",
+          "spawn_chance": 0.21,
+          "avg_spawns": 21,
+          "spawn_time": "04:00",
+          "multipliers": [
+               2.34
+          ],
+          "weaknesses": [
+               "Ground"
+          ]
+     },
+     {
+          "id": 26,
+          "num": "026",
+          "name": "Raichu",
+          "img": "http://www.serebii.net/pokemongo/pokemon/026.png",
+          "type": [
+               "Electric"
+          ],
+          "height": "0.79 m",
+          "weight": "30.0 kg",
+          "candy": "Pikachu Candy",
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.0076,
+          "avg_spawns": 0.76,
+          "spawn_time": "23:58",
+          "multipliers": null,
+          "weaknesses": [
+               "Ground"
+          ]
+     },
+     {
+          "id": 27,
+          "num": "027",
+          "name": "Sandshrew",
+          "img": "http://www.serebii.net/pokemongo/pokemon/027.png",
+          "type": [
+               "Ground"
+          ],
+          "height": "0.61 m",
+          "weight": "12.0 kg",
+          "candy": "Sandshrew Candy",
+          "candy_count": 50,
+          "egg": "5 km",
+          "spawn_chance": 1.11,
+          "avg_spawns": 111,
+          "spawn_time": "01:58",
+          "multipliers": [
+               2.45
+          ],
+          "weaknesses": [
+               "Water",
+               "Grass",
+               "Ice"
+          ]
+     },
+     {
+          "id": 28,
+          "num": "028",
+          "name": "Sandslash",
+          "img": "http://www.serebii.net/pokemongo/pokemon/028.png",
+          "type": [
+               "Ground"
+          ],
+          "height": "0.99 m",
+          "weight": "29.5 kg",
+          "candy": "Sandshrew Candy",
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.037,
+          "avg_spawns": 3.7,
+          "spawn_time": "12:34",
+          "multipliers": null,
+          "weaknesses": [
+               "Water",
+               "Grass",
+               "Ice"
+          ]
+     },
+     {
+          "id": 29,
+          "num": "029",
+          "name": "Nidoran \u2640 (Female)",
+          "img": "http://www.serebii.net/pokemongo/pokemon/029.png",
+          "type": [
+               "Poison"
+          ],
+          "height": "0.41 m",
+          "weight": "7.0 kg",
+          "candy": "Nidoran \u2640 (Female) Candy",
+          "candy_count": 25,
+          "egg": "5 km",
+          "spawn_chance": 1.38,
+          "avg_spawns": 138,
+          "spawn_time": "01:51",
+          "multipliers": [
+               1.63,
+               2.48
+          ],
+          "weaknesses": [
+               "Ground",
+               "Psychic"
+          ]
+     },
+     {
+          "id": 30,
+          "num": "030",
+          "name": "Nidorina",
+          "img": "http://www.serebii.net/pokemongo/pokemon/030.png",
+          "type": [
+               "Poison"
+          ],
+          "height": "0.79 m",
+          "weight": "20.0 kg",
+          "candy": "Nidoran \u2640 (Female) Candy",
+          "candy_count": 100,
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.088,
+          "avg_spawns": 8.8,
+          "spawn_time": "07:22",
+          "multipliers": [
+               1.83,
+               2.48
+          ],
+          "weaknesses": [
+               "Ground",
+               "Psychic"
+          ]
+     }
+]

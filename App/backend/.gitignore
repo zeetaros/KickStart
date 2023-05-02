@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Database credentials
+.env*
+
+# Database used for tests
+test_db.db
+
+# Jupyter notebooks
+notebooks/

@@ -1,0 +1,234 @@
+[
+     {
+          "id": 31,
+          "num": "031",
+          "name": "Nidoqueen",
+          "img": "http://www.serebii.net/pokemongo/pokemon/031.png",
+          "type": [
+               "Poison",
+               "Ground"
+          ],
+          "height": "1.30 m",
+          "weight": "60.0 kg",
+          "candy": "Nidoran \u2640 (Female) Candy",
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.012,
+          "avg_spawns": 1.2,
+          "spawn_time": "12:35",
+          "multipliers": null,
+          "weaknesses": [
+               "Water",
+               "Ice",
+               "Ground",
+               "Psychic"
+          ]
+     },
+     {
+          "id": 32,
+          "num": "032",
+          "name": "Nidoran \u2642 (Male)",
+          "img": "http://www.serebii.net/pokemongo/pokemon/032.png",
+          "type": [
+               "Poison"
+          ],
+          "height": "0.51 m",
+          "weight": "9.0 kg",
+          "candy": "Nidoran \u2642 (Male) Candy",
+          "candy_count": 25,
+          "egg": "5 km",
+          "spawn_chance": 1.31,
+          "avg_spawns": 131,
+          "spawn_time": "01:12",
+          "multipliers": [
+               1.64,
+               1.7
+          ],
+          "weaknesses": [
+               "Ground",
+               "Psychic"
+          ]
+     },
+     {
+          "id": 33,
+          "num": "033",
+          "name": "Nidorino",
+          "img": "http://www.serebii.net/pokemongo/pokemon/033.png",
+          "type": [
+               "Poison"
+          ],
+          "height": "0.89 m",
+          "weight": "19.5 kg",
+          "candy": "Nidoran \u2642 (Male) Candy",
+          "candy_count": 100,
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.083,
+          "avg_spawns": 8.3,
+          "spawn_time": "09:02",
+          "multipliers": [
+               1.83
+          ],
+          "weaknesses": [
+               "Ground",
+               "Psychic"
+          ]
+     },
+     {
+          "id": 34,
+          "num": "034",
+          "name": "Nidoking",
+          "img": "http://www.serebii.net/pokemongo/pokemon/034.png",
+          "type": [
+               "Poison",
+               "Ground"
+          ],
+          "height": "1.40 m",
+          "weight": "62.0 kg",
+          "candy": "Nidoran \u2642 (Male) Candy",
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.017,
+          "avg_spawns": 1.7,
+          "spawn_time": "12:16",
+          "multipliers": null,
+          "weaknesses": [
+               "Water",
+               "Ice",
+               "Ground",
+               "Psychic"
+          ]
+     },
+     {
+          "id": 35,
+          "num": "035",
+          "name": "Clefairy",
+          "img": "http://www.serebii.net/pokemongo/pokemon/035.png",
+          "type": [
+               "Normal"
+          ],
+          "height": "0.61 m",
+          "weight": "7.5 kg",
+          "candy": "Clefairy Candy",
+          "candy_count": 50,
+          "egg": "2 km",
+          "spawn_chance": 0.92,
+          "avg_spawns": 92,
+          "spawn_time": "03:30",
+          "multipliers": [
+               2.03,
+               2.14
+          ],
+          "weaknesses": [
+               "Fighting"
+          ]
+     },
+     {
+          "id": 36,
+          "num": "036",
+          "name": "Clefable",
+          "img": "http://www.serebii.net/pokemongo/pokemon/036.png",
+          "type": [
+               "Normal"
+          ],
+          "height": "1.30 m",
+          "weight": "40.0 kg",
+          "candy": "Clefairy Candy",
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.012,
+          "avg_spawns": 1.2,
+          "spawn_time": "03:29",
+          "multipliers": null,
+          "weaknesses": [
+               "Fighting"
+          ]
+     },
+     {
+          "id": 37,
+          "num": "037",
+          "name": "Vulpix",
+          "img": "http://www.serebii.net/pokemongo/pokemon/037.png",
+          "type": [
+               "Fire"
+          ],
+          "height": "0.61 m",
+          "weight": "9.9 kg",
+          "candy": "Vulpix Candy",
+          "candy_count": 50,
+          "egg": "5 km",
+          "spawn_chance": 0.22,
+          "avg_spawns": 22,
+          "spawn_time": "13:43",
+          "multipliers": [
+               2.74,
+               2.81
+          ],
+          "weaknesses": [
+               "Water",
+               "Ground",
+               "Rock"
+          ]
+     },
+     {
+          "id": 38,
+          "num": "038",
+          "name": "Ninetales",
+          "img": "http://www.serebii.net/pokemongo/pokemon/038.png",
+          "type": [
+               "Fire"
+          ],
+          "height": "1.09 m",
+          "weight": "19.9 kg",
+          "candy": "Vulpix Candy",
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.0077,
+          "avg_spawns": 0.77,
+          "spawn_time": "01:32",
+          "multipliers": null,
+          "weaknesses": [
+               "Water",
+               "Ground",
+               "Rock"
+          ]
+     },
+     {
+          "id": 39,
+          "num": "039",
+          "name": "Jigglypuff",
+          "img": "http://www.serebii.net/pokemongo/pokemon/039.png",
+          "type": [
+               "Normal"
+          ],
+          "height": "0.51 m",
+          "weight": "5.5 kg",
+          "candy": "Jigglypuff Candy",
+          "candy_count": 50,
+          "egg": "2 km",
+          "spawn_chance": 0.39,
+          "avg_spawns": 39,
+          "spawn_time": "08:46",
+          "multipliers": [
+               1.85
+          ],
+          "weaknesses": [
+               "Fighting"
+          ]
+     },
+     {
+          "id": 40,
+          "num": "040",
+          "name": "Wigglytuff",
+          "img": "http://www.serebii.net/pokemongo/pokemon/040.png",
+          "type": [
+               "Normal"
+          ],
+          "height": "0.99 m",
+          "weight": "12.0 kg",
+          "candy": "Jigglypuff Candy",
+          "egg": "Not in Eggs",
+          "spawn_chance": 0.018,
+          "avg_spawns": 1.8,
+          "spawn_time": "12:28",
+          "multipliers": null,
+          "weaknesses": [
+               "Fighting"
+          ]
+     }
+]

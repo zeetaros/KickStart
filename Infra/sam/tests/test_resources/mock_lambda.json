@@ -1,0 +1,40 @@
+{
+    "ResponseMetadata": {
+        "RequestId": "12345678-3ee1-4da4-aa5d-34t0jnvs92m",
+        "HTTPStatusCode": 200,
+        "HTTPHeaders": {
+            "date": "Sun, 07 Nov 2021 15:22:37 GMT",
+            "content-type": "application/json",
+            "content-length": "2841",
+            "connection": "keep-alive",
+            "x-amzn-requestid": "12345678-3ee1-4da4-aa5d-34t0jnvs92m"
+        },
+        "RetryAttempts": 0
+    },
+    "Configuration": {
+        "FunctionName": "cc-test-event-consumer1",
+        "FunctionArn": "arn:aws:lambda:eu-west-2:700000000000:function:cc-test-event-consumer1",
+        "Runtime": "python3.8",
+        "Role": "arn:aws:iam::700000000000:role/uat-LambdaExecutionRole",
+        "Handler": "lambda_function.lambda_handler",
+        "CodeSize": 516,
+        "Description": "",
+        "Timeout": 180,
+        "MemorySize": 128,
+        "LastModified": "2021-11-07T01:54:46.588+0000",
+        "CodeSha256": "",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "TARGET_BUCKET": "test-eventbridge-destination-2"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "12345678-3ee1-4da4-aa5d-34t0jnvs92m",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip"
+    }
+}
