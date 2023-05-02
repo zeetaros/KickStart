@@ -2,4 +2,4 @@ celery==5.2.2
 flask==2.3.2
 supervisor==4.2.2
 Django==3.2.15
-redis==3.5.3
+redis==4.4.4
