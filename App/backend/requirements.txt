@@ -10,12 +10,15 @@ jinja2==3.1.1 # web app templates
 motor==3.0.0
 aiofiles==0.8.0 # serve static files
 aioboto3==10.0.0
+anyio==3.7.1
 sqlalchemy==1.4.35 # database object-relational mapper (ORM)
 python-dotenv==0.20.0 # environment variables management
 psycopg2==2.9.3 # may first require to run "brew install postgresql"
 psycopg2-binary==2.9.3
 httpx==0.23.0
+requests==2.31.0
 passlib==1.7.4
 passlib[bcrypt] # password hashing
 pytest==7.1.1
 python-jose==3.3.0 # jwt tokens
+typing-extensions==4.6.0
