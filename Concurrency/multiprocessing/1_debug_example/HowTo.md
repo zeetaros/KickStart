@@ -8,6 +8,8 @@
 ### Communication
 The cost of communication is high. Reduce the number of times that data needs to be transferred.
 
+Having said that, communication can happen when waiting for independent large task to finish. For example, `Process 4` is assigned tasks [a, b, c, d, e, f] with increasing complexity. When it got the output of a, b, c, d and waiting for e, but e is going to take long to finish, then we can consider communicate the result of a, b, c, d back to the main process first while waiting for e to finish.
+
 ### Load Balance
 Make sure the workloads are split as evenly as possible across all processes.
 
