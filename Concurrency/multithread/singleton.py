@@ -17,6 +17,7 @@ class Singleton(type):
         - Testability issues as it needs to handle multiple situations
         - State for life
     """
+
     _instances = {}
     _lock = Lock()
 
@@ -24,20 +25,24 @@ class Singleton(type):
         with self._lock:
             if self not in self._instances:
                 instance = super().__call__(*args, **kwargs)
-                time.sleep(1)  # add this in as the machine needs some time to provision resource when creating the 1st instance
-                self._instances[self] = instance 
+                time.sleep(
+                    1
+                )  # add this in as the machine needs some time to provision resource when creating the 1st instance
+                self._instances[self] = instance
         return self._instances[self]
-    
+
 
 class NetworkDriver(metaclass=Singleton):
     def log(self):
         # print out the instance of the class
         print(f"{self}\n")
 
+
 def create_singleton():
     singleton = NetworkDriver()
     singleton.log()
     return singleton
+
 
 if __name__ == "__main__":
     # single thread

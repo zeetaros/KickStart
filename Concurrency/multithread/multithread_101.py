@@ -5,13 +5,14 @@ import threading
 def calc_sum_squares(n):
     """
     To speed up this part, multiprocessing is a better choice
-    because it's computational intensive. 
+    because it's computational intensive.
     For threading in Python, only 1 thread can be run at a time due to GIL.
     """
     sum_sq = 0
     for i in range(n):
-        sum_sq += i ** 2
+        sum_sq += i**2
     print(sum_sq)
+
 
 def sleep_1():
     sleep_start_time = time.time()
@@ -52,7 +53,7 @@ def main():
 
     for i in range(5):
         maximum_value = (i + 1) * 100000
-        t = threading.Thread(target=calc_sum_squares, args=(maximum_value, ))
+        t = threading.Thread(target=calc_sum_squares, args=(maximum_value,))
         # start the thread
         t.start()
 
@@ -62,10 +63,13 @@ def main():
         # block the thread when it finishes, prevent it from proceeding.
         current_threads[i].join()
 
-    print(f"\nCalculating sum of squares took: {round(time.time() - calc_start_time, 1)}")
+    print(
+        f"\nCalculating sum of squares took: {round(time.time() - calc_start_time, 1)}"
+    )
 
     # sleep_1() # this takes 15 sec
-    sleep_2() # this takes 5 sec
+    sleep_2()  # this takes 5 sec
+
 
 if __name__ == "__main__":
     main()
