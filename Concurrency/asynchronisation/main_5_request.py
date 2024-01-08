@@ -19,6 +19,9 @@ async def get_url_response(url):
 
 
 def get_url_with_requests(url):
+    """
+    This blocks the event loop until the request is made and the response is received.
+    """
     return requests.get(url).text
 
 
