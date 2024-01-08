@@ -17,18 +17,19 @@ async def return_hello():
 
 
 async def main():
-    # create a task which the programme can work on when resource is available
-    # the result is not guaranteed to return until calling "await"
     task = asyncio.create_task(async_sleep(1))
-    await async_sleep(2)
-    # "await" gives control back to event loop
-    # indicating no resource is required for this operation
-    # until the result is returned; so resource can be released immediately
-    # to continue the next operation.
+    """
+    Having the below set up will schedule the operations sequentially
+
+    await async_sleep(2) 
     await print_hello()
     await task
     result = await return_hello()
-    print(result)
+
+    but not in parallel. To schedule the operations in parallel, use asyncio.gather
+    """
+    await asyncio.gather(async_sleep(2), print_hello(), task, return_hello())
+    # this give better concurrent nature
 
 
 if __name__ == "__main__":
