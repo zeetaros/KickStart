@@ -149,3 +149,5 @@ tmpdx*
 
 # test database
 test_db.db
+
+App/backend/.env.local
