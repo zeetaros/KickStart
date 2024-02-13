@@ -1,0 +1,37 @@
+queues:
+  - name: SymbolQueue
+    description: contains symbols to be scraped from yahoo finance
+
+  - name: PostgresUploading
+    description: contains data that needs to be uploaded to postgres
+
+  # simple configuration for adding another destination
+  - name: RedisUploading
+    description: contains data that needs to be uploaded to redis
+
+workers:
+  - name: WikiWorker
+    description: scraps raw wikipedia page and pulls out symbols
+    module: workers.WikiWorker
+    class: WikiWorker
+    input_values:
+      - "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+    output_queues:
+      - SymbolQueue
+
+  - name: FinanceWorker
+    description: pulls price data for a specific symbol
+    module: workers.FinanceWorker
+    class: FinanceScheduler
+    threads: 4
+    input_queue: SymbolQueue
+    output_queues:
+      - PostgresUploading
+
+  - name: PostgresWorker
+    description: take stock data and save in Postgres
+    module: workers.PostgresWorker
+    class: PostgresMasterScheduler
+    threads: 4
+    input_queue: PostgresUploading
+  
