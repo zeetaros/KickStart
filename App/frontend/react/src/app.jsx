@@ -1,67 +1,58 @@
-console.log("App.js is running");
-
-var app = {
-    title: "React App",
-    subtitle: "Put your life in the hands of a computer"
-};
-
-// JSX - JavaScript with XML
-var template = (
-    <div>
-        <h1>{app.title}</h1>
-        {app.subtitle && <p>{app.subtitle}</p>}
-        <ol>
-            <li>Item one</li>
-            <li>Item two</li>
-            <li>Item three</li>
-            <li>Item four</li>
-        </ol>
-    </div>
-);
-
-// mutable variable
-var user = {
-    name: "Andrew",
-    age: 26,
-    eligible: "no",
-    location: "Philadelphia"
-};
-
-// immutable constant (cannot be re-defined)
-let user2 = {
-    name: "Lucy",
-    age: 13,
-    eligible: "yes"
-};
-
-// immutable constant that (cannot be re-defined nor re-assigned)
-const user3 = {
-    name: "Joe",
-    age: 13,
-    eligible: "yes"
-};
+// CORE_CONCEPTS is a named export in data.js not default export; Hence, import it explicitly with {}
+import { CORE_CONCEPTS, CORE_CONCEPTS_V2 } from './data.js';
+import Header from './components/Header/Header.jsx';  // this imports the default export function in Header.jsx and named the module "Header"
+import CoreConcept from './components/CoreConcept/CoreConcept.jsx';
+import TabButton from './components/TabButton/TabButton.jsx';
 
 
-// Conditional render: only render the Location if location is provided
-function getLocation(location) {
-    if (location) {
-        return <p>Location: {location}</p>;
+function App() {
+    let tabContent = "Please click a button"
+    function selectHandler(selectedButton) {
+        // selectedButton => 'components', 'jsx', 'props', 'state'
+        tabContent = selectedButton
+        console.log(tabContent);
     }
+
+    return (
+        <div>
+            {/* use the Header component */}
+            <Header />
+            <main>
+                <section id="core-concepts">
+                <h2>Quick Start</h2>
+                <ul>
+                    {/* insert resusable React component */}
+                    <CoreConcept 
+                        // set attributes for the props object
+                        title={CORE_CONCEPTS[0].title}
+                        description={CORE_CONCEPTS[0].description}
+                        image={CORE_CONCEPTS[0].image}
+                    />
+                    <CoreConcept 
+                        title={CORE_CONCEPTS_V2[1].title}
+                        description={CORE_CONCEPTS_V2[1].descr}
+                        image={CORE_CONCEPTS_V2[1].img}
+                    />
+                    {/* short form if and only if attributes in CORE_CONCEPTS named the same as how it's called in component CoreConcept */}
+                    <CoreConcept {...CORE_CONCEPTS[2]}/>
+                    <CoreConcept {...CORE_CONCEPTS[3]}/>
+                    
+                </ul>
+                </section>
+                <section id="examples">
+                    <h2>Examples</h2>
+                    <menu>
+                        {/* this way of using component is component composition by using children props */}
+                        <TabButton onSelect={() => selectHandler('component')}>Component</TabButton>
+                        <TabButton onSelect={() => selectHandler('jsx')}>JSX</TabButton>
+                        <TabButton onSelect={() => selectHandler('props')}>Props</TabButton>
+                        <TabButton onSelect={() => selectHandler('state')}>State</TabButton>
+                    </menu>
+                   {tabContent}
+                </section>
+            </main>
+        </div>
+    )
 }
-var templateTwo = (
-    <div>
-        <h1>{user.name ? user.name : "Anonymous"}</h1>
-        {/* Conditional render */}
-        {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
-        {(user.eligible && user.eligible == "yes") && <p>Eligible: {user.eligible}</p>}
-        {getLocation(user.location)}
-        <h1>{user2.name ? user2.name : "Anonymous"}</h1>
-        {(user2.age && user2.age >= 18) && <p>Age: {user2.age}</p>}
-        {(user2.eligible && user2.eligible == "yes") && <p>Eligible: {user2.eligible}</p>}
-        {getLocation(user2.location)}
-    </div>
-);
 
-var appRoot = document.getElementById("app");
-
-ReactDOM.render(templateTwo, appRoot);
+export default App;

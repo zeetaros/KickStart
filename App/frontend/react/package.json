@@ -13,7 +13,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "sync": "browserify src/app.jsx --o public/scripts/app.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-transform-class-properties ] ]",
-    "sync-watch": "watchify src/myApp.jsx -o public/scripts/app.js -v -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-transform-class-properties ] ]",
+    "sync-watch": "watchify src/app.jsx -o public/scripts/app.js -v -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-transform-class-properties ] ]",
     "live-server-version": "live-server --version",
     "live-server-up": "live-server public",
     "babel-version": "babel --version"
