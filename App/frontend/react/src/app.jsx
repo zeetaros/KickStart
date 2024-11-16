@@ -1,3 +1,4 @@
+import { useState } from 'react';
 // CORE_CONCEPTS is a named export in data.js not default export; Hence, import it explicitly with {}
 import { CORE_CONCEPTS, CORE_CONCEPTS_V2 } from './data.js';
 import Header from './components/Header/Header.jsx';  // this imports the default export function in Header.jsx and named the module "Header"
@@ -6,10 +7,12 @@ import TabButton from './components/TabButton/TabButton.jsx';
 
 
 function App() {
+    const [selectedTopic, setSelectedTopic] = useState("Please click a button");
+
     let tabContent = "Please click a button"
     function selectHandler(selectedButton) {
         // selectedButton => 'components', 'jsx', 'props', 'state'
-        tabContent = selectedButton
+        setSelectedTopic(selectedButton);
         console.log(tabContent);
     }
 
@@ -48,7 +51,7 @@ function App() {
                         <TabButton onSelect={() => selectHandler('props')}>Props</TabButton>
                         <TabButton onSelect={() => selectHandler('state')}>State</TabButton>
                     </menu>
-                   {tabContent}
+                   {selectedTopic}
                 </section>
             </main>
         </div>
