@@ -6,7 +6,7 @@ pymongo==4.1.0
 pydantic==1.9.0
 pydantic[dotenv]
 pydantic[email] # email validation as EmailStr is imported
-jinja2==3.1.4 # web app templates
+jinja2==3.1.5 # web app templates
 motor==3.0.0
 aiofiles==0.8.0 # serve static files
 aioboto3==10.0.0
