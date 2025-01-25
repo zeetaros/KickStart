@@ -148,6 +148,10 @@ redis-6.2.4
 # dagster temp
 tmpdx*
 
+# secrets
+*.pem
+*.key
+
 # test database
 test_db.db
 
