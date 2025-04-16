@@ -160,7 +160,7 @@ Operators have a trigger_rule that defines how the task gets triggered. The defa
 
 Once you created a task and mentioned the dag, it will be part of that dag. Setting up/down stream is only for establishing a relationship between tasks, which task will be triggered will be determined by upstream task and trigger rule.  
 
-*Reference: https://stackoverflow. com/questions/60088432/tasks-show-up-even-when-i-am-not-giving-a-upstream-or-downstream-in-airfLow*
+*Reference: https://stackoverflow.com/questions/60088432/tasks-show-up-even-when-i-am-not-giving-a-upstream-or-downstream-in-airfLow*
 
 
 <br>
