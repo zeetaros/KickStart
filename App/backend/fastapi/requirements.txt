@@ -12,7 +12,7 @@ aiofiles==0.8.0 # serve static files
 aioboto3==10.0.0
 anyio==3.7.1
 sqlalchemy==1.4.35 # database object-relational mapper (ORM)
-python-dotenv==0.20.0 # environment variables management
+python-dotenv==1.2.2 # environment variables management
 psycopg2==2.9.3 # may first require to run "brew install postgresql"
 psycopg2-binary==2.9.3
 httpx==0.23.0
