@@ -16,7 +16,7 @@ python-dotenv==1.2.2 # environment variables management
 psycopg2==2.9.3 # may first require to run "brew install postgresql"
 psycopg2-binary==2.9.3
 httpx==0.23.0
-requests==2.32.4
+requests==2.33.0
 passlib==1.7.4
 passlib[bcrypt] # password hashing
 pytest==9.0.3
