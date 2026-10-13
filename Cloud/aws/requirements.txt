@@ -1,4 +1,4 @@
-pyspark==3.3.2
+pyspark==3.5.8
 pyspark[sql]
 pandas==1.4.2
 black==26.3.1
